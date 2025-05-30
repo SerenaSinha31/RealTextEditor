@@ -43,7 +43,7 @@ Make sure you have the following installed:
 npm install
 npm start
 Visit the app:
-👉 http://localhost:3000
+👉 http://localhost:5000
 
 🚀 Usage
 Open the app in your browser.
