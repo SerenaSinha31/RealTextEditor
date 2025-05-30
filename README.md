@@ -36,7 +36,7 @@ Visit the app in your browser:
 👉 http://localhost:3000
 
 🚀 Usage
-Open the app in your browser.
+**Open the app in your browser.**
 
 On the Home Page, create a new room or join one using a Room ID and username.
 
@@ -67,4 +67,4 @@ Codemirror – Powerful code/text editor component.
 React Hot Toast – Elegant toast notifications.
 
 👩‍💻 Author
-Serena Sinha
+Serena Sinha```
