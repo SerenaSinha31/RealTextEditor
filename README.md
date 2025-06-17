@@ -11,6 +11,12 @@ The **Real-Time Document Editor** is a web-based application that enables real-t
 - ✍️ **Document Editing:** Versatile text editor with syntax highlighting and formatting support using CodeMirror.
 - 🔗 **Copy Room ID:** Easily copy and share Room IDs to invite others.
 - 🚪 **Leave Room:** Exit sessions effortlessly when done collaborating.
+  
+📈 Purpose & Impact
+Designed for developers, students, and remote teams needing a quick and reliable way to co-edit code or documents.
+
+Enhances productivity through simultaneous real-time interaction without the need for external tools.
+
 
 ---
 
