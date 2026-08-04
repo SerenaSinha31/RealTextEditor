@@ -8,7 +8,10 @@ const ACTIONS = require('./src/Actions');
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: '*',
+        // Reflect the request origin so any Railway domain works.
+        // (origin: '*' is incompatible with credentials; reflecting is safer
+        //  and works for same-origin deployments without any CORS enforcement.)
+        origin: true,
         methods: ['GET', 'POST'],
     },
 });
