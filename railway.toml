@@ -1,0 +1,24 @@
+# Railway deployment configuration
+# Docs: https://docs.railway.com/deploy/config-as-code
+#
+# Why this file exists:
+# The package.json "start" script is `npm run build && npm run server:prod`,
+# which rebuilds the React app on EVERY container startup. On Railway that
+# runtime webpack build is memory-heavy and either OOMs or trips the deploy
+# health-check, so the deployment fails / crash-loops.
+#
+# Railway already runs `npm run build` during the BUILD phase (the build/ folder
+# is produced and shipped to the runtime image). So at startup we only need to
+# run the Express server, which serves the already-built `build/` folder.
+
+[build]
+# Build the React frontend once, during the build phase. The resulting `build/`
+# directory is carried over to the runtime image.
+buildCommand = "npm run build"
+
+[deploy]
+# Just start the server (no rebuild). server.js reads `process.env.PORT` and
+# serves the pre-built `build/` folder + Socket.io on the same origin.
+startCommand = "node server.js"
+# Express serves index.html at "/", so "/" is a valid health-check endpoint.
+healthcheckPath = "/"
