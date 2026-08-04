@@ -8,7 +8,10 @@ export const initSocket = async() => {
 		transports: ['websocket'],
 	};
 
-	return io(process.env.REACT_APP_BACKEND_URL, options);
+	// Use env variable for local dev, fall back to same origin for Railway/cloud deployments
+	const backendUrl = process.env.REACT_APP_BACKEND_URL || window.location.origin;
+
+	return io(backendUrl, options);
 	
 };
 
