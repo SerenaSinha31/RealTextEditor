@@ -5,7 +5,8 @@ export const initSocket = async() => {
 		'force new connection': true,
 		reconnectionAttempts: 'Infinity',
 		timeout: 10000,
-		transports: ['websocket'],
+		// Allow polling first, then upgrade to websocket — required for Railway/cloud proxies
+		transports: ['polling', 'websocket'],
 	};
 
 	// Use env variable for local dev, fall back to same origin for Railway/cloud deployments
